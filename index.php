@@ -120,6 +120,26 @@
             <div class="content active" id="panel1">
               <h2> OVERVIEW </h2>
               <p>This is the first panel of the basic tab example. This is the first panel of the basic tab example.</p>
+              <?php
+              foreach($drugs as $drugrow){
+                  echo "<h3>".$drugrow['genName']."</h3><br>";
+                  echo "<p id='".$drugrow['genName']."'>
+                  </p>
+                  <br>
+                  <script>
+                  $.get('https://api.fda.gov/drug/label.json?search=generic_name:" . $drugrow["genName"] . "', function(res) {
+                    if(!(typeof res.results[0].information_for_patients === 'undefined'))
+                    {
+                          $('#".$drugrow['genName']."').text(res.results[0].information_for_patients[0]);
+                        }
+                        else {
+                          $('#".$drugrow['genName']."').text(res.results[0].indications_and_usage[0]);
+                        }
+
+                        });
+                        </script>";
+              }
+               ?>
             </div>
             <?php 
             $count2=2;
