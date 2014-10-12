@@ -10,7 +10,7 @@ $con=mysqli_connect("localhost","root","","mymeds");
   }
 
 if($var == 'drugs') {
-	$res = $con->query("SELECT brandName, userid, schedule from drugs");
-	
+	$res = $con->query("SELECT genName, userid, schedule from drugs")->fetch_array(MYSQLI_NUM);
+	print_r($res);
 }
 ?>
