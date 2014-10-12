@@ -16,8 +16,9 @@ namespace TwilioContact
         {
             string[] uidsched = GetDrugs();
             scheduler = GetScheduleWithPhone(uidsched);
-            Timer t = new Timer(1);
+            Timer t = new Timer(1000);
             t.Elapsed += new ElapsedEventHandler(t_Elapsed);
+            t.Start();
             Console.ReadKey();
         }
 
@@ -26,6 +27,7 @@ namespace TwilioContact
             Dictionary<DateTime, string[]> temp = new Dictionary<DateTime,string[]>(scheduler);
             foreach (KeyValuePair<DateTime, string[]> item in temp)
             {
+                Console.WriteLine("Checking Schedule...");
                 if (CheckSchedule(item.Key, item.Value[0], item.Value[1], item.Value[2]))
                 {
                     scheduler.Remove(item.Key);
@@ -89,6 +91,7 @@ namespace TwilioContact
             {
                 Out = string.Format("HTTP_ERROR :: Exception raised! :: {0}", ex.Message);
             }
+            Console.WriteLine("Everything is fine with Http_Get! Whew!");
             return Out;
         }
 
@@ -120,6 +123,7 @@ namespace TwilioContact
                     result.Add(DateTime.Parse(dates[j]), new string[] { datum[0], datum[1], drugs[i + 1] }); // name, phone, drug name
                 }
             }
+            Console.WriteLine("Everything is fine with scheduling! Whew!");
             return result;
         }
 
