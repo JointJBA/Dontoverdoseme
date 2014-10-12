@@ -20,7 +20,7 @@ if($var == 'drugs') {
 else if($var == "user") {
 	$id = $_GET['id'];
 	$publish = "";
-	$res = $con->query("SELECT usernam, phone from user WHERE id='" . $id . "'");
+	$res = $con->query("SELECT username, phone from user WHERE id='" . $id . "'");
 	while($result = $res->fetch_row()) {
 		$publish .= $result[0] . '|' . $result[1] . '|';
 	}
