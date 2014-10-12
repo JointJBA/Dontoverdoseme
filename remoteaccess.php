@@ -10,7 +10,20 @@ $con=mysqli_connect("localhost","root","","mymeds");
   }
 
 if($var == 'drugs') {
-	$res = $con->query("SELECT genName, userid, schedule from drugs")->fetch_array(MYSQLI_NUM);
-	print_r($res);
+	$publish = "";
+	$res = $con->query("SELECT genName, userid, schedule from drugs");
+	while($result = $res->fetch_row()) {
+		$publish .= $result[1] . '|' . $result[0] . '|' . $result[2] . '|';
+	}
+	echo $publish;
+}
+else if($var == "user") {
+	$id = $_GET['id'];
+	$publish = "";
+	$res = $con->query("SELECT usernam, phone from user WHERE id='" . $id . "'");
+	while($result = $res->fetch_row()) {
+		$publish .= $result[0] . '|' . $result[1] . '|';
+	}
+	echo $publish;
 }
 ?>
