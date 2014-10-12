@@ -1,0 +1,9 @@
+E:\Visual Studio Projects\TwilioContact\TwilioContact\bin\Debug\TwilioContact.exe
+E:\Visual Studio Projects\TwilioContact\TwilioContact\bin\Debug\TwilioContact.pdb
+E:\Visual Studio Projects\TwilioContact\TwilioContact\bin\Debug\MySql.Data.dll
+E:\Visual Studio Projects\TwilioContact\TwilioContact\obj\x86\Debug\TwilioContact.exe
+E:\Visual Studio Projects\TwilioContact\TwilioContact\obj\x86\Debug\TwilioContact.pdb
+E:\Visual Studio Projects\TwilioContact\TwilioContact\bin\Debug\RestSharp.dll
+E:\Visual Studio Projects\TwilioContact\TwilioContact\bin\Debug\RestSharp.xml
+E:\Visual Studio Projects\TwilioContact\TwilioContact\obj\x86\Debug\TwilioContact.csprojResolveAssemblyReference.cache
+E:\Visual Studio Projects\TwilioContact\TwilioContact\bin\Debug\RestSharp.pdb
