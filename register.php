@@ -16,11 +16,6 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
     $phone = $_POST['phone'];
-    echo $username;
-    echo "\n";
-    echo $password;
-    echo "\n";
-    echo $phone;
 
     $con=mysqli_connect("localhost","root","","mymeds");
 // Check connection

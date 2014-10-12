@@ -206,18 +206,10 @@
           <br>
           <h1>What Do We Do?</h1>
           <br>
-          <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation
-            eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore
-            aliqua non est magna in labore pig pork biltong. Eiusmod swine
-            spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump
-            corned beef.
+          <p style="font-size:24px;">
+            A consumer-focused medication management app that consolidates a list of current medications and displays a list of possible interactions with other drugs. Includes a text messaging service to remind users when to take their medications for improved adherence.
           </p>
-          <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop
-            in. Swine short ribs meatball irure bacon nulla pork belly
-            cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui
-            bresaola enim jowl. Capicola short ribs minim salami nulla nostrud
-            pastrami.
-          </p>
+          
         </div>
         <!-- This is the login panel -->
         <div class="large-4 right panel columns">

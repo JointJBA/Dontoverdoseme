@@ -7,15 +7,6 @@ if (empty($_POST)=== false) {
   $user_id = $_POST['user_id'];
   $schedule = $_POST['schedule']; //will be replaced 
 
-  echo $add_drug;
-  echo "<br>";
-  echo $username;
-  echo "<br>";
-  echo $password;
-  echo "<br>";
-  echo $user_id;
-  echo "<br>";
-  echo $schedule;
 
 
   $con=mysqli_connect("localhost","root","","mymeds");
