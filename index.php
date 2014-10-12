@@ -125,7 +125,9 @@
             foreach($drugs as $drugrow){
             echo "<div class='content' id='panel".$count2."'><p>".$drugrow['genName']."</p></div>";
 
-            $json = file_get_contents('https://api.fda.gov/drug/label.json?search=generic_name:'.$drugrow['genName']);
+            $json_link = 'https://api.fda.gov/drug/label.json?search=generic_name:'.$drugrow['genName'];
+            echo $json_link; //link works properly something not working below
+            $json = file_get_contents($json_link);
             $obj = json_decode($json);
             echo $obj->results;
 
