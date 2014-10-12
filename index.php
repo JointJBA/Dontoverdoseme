@@ -38,6 +38,10 @@
       $password= $user_row["password"];
       $phone= $user_row["phone"];
       $sign_in = true;
+
+      $drugs = mysqli_query($con,"SELECT * FROM drugs
+      WHERE userid='$user_id'");
+      
     }
     mysqli_close($con);
   }
@@ -47,20 +51,21 @@
     <!-- PHP IF STATEMENT SHOWING LOGIN ONLY IF LOGGED IN -->
 
 
-
-
-    <!--IF NOT SIGNED IN -->
-
-    <!-- IF SIGNED IN -->
-
     <div class="row fullWidth">
       <div id="drugList" class="text-center large-2 columns">
 
         <dl class="tabs" data-tab>
           <dd class="drugBox"><a href="#panel1"><h3>Overview</h3></a></dd>
-          <dd class="drugBox"><a href="#panel2"><h3>Tab2</h3></a></dd>
-          <dd class="drugBox"><a href="#panel3"><h3>Tab3</h3></a></dd>
-          <dd class="drugBox"><a href="#panel4"><h3>Tab4</h3></a></dd>
+          <?php 
+          $count=2;
+          foreach($drugs as $drugrow){
+            echo "<dd class='drugBox'><a href='#panel".$count."'><h3>".$drugrow['genName']."</h3></a></dd>";
+            $count++;
+          }
+
+
+          ?>
+
         </dl>
         <br>
         <form action="add_drug.php" method="post">
@@ -110,18 +115,19 @@
         <h1><?php echo $username."'s Profile "; ?> <a class="button logout radius tiny" href="index.php">Log Out</a></h1>
         <div class="panel large-12 columns">
           <div class="tabs-content">
+
             <div class="content active" id="panel1">
+              <h2> OVERVIEW </h2>
               <p>This is the first panel of the basic tab example. This is the first panel of the basic tab example.</p>
             </div>
-            <div class="content" id="panel2">
-              <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
-            </div>
-            <div class="content" id="panel3">
-              <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
-            </div>
-            <div class="content" id="panel4">
-              <p>This is the fourth panel of the basic tab example. This is the fourth panel of the basic tab example.</p>
-            </div>
+            <?php 
+            $count2=2;
+            foreach($drugs as $drugrow){
+            echo "<div class='content' id='panel".$count2."'><p>".$drugrow['genName'].$count2."</p></div>";
+            $count2++;
+          }
+?>
+
           </div>
         </div>
 
