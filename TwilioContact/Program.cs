@@ -89,13 +89,12 @@ namespace TwilioContact
             {
                 Out = string.Format("HTTP_ERROR :: Exception raised! :: {0}", ex.Message);
             }
-
             return Out;
         }
 
         public static string[] GetDrugs() //returns uid, drugname, schedule
         {
-            string[] datum = HTTP_GET("http://dontoverdoseme.ngrok.com/mymeds/remoteaccess.php", "a=drugs").Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] datum = HTTP_GET("http://dontoverdoseme.ngrok.com/dontoverdoseme/remoteaccess.php", "a=drugs").Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
             return datum;
         }
 
@@ -114,7 +113,7 @@ namespace TwilioContact
             Dictionary<DateTime, string[]> result = new Dictionary<DateTime, string[]>();
             for (int i = 0; i < drugs.Length; i+=3)
             {
-                string[] datum = HTTP_GET("http://dontoverdoseme.ngrok.com/mymeds/remoteaccess.php", "a=user&id=" + drugs[i]).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] datum = HTTP_GET("http://dontoverdoseme.ngrok.com/dontoverdoseme/remoteaccess.php", "a=user&id=" + drugs[i]).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
                 string[] dates = drugs[i + 2].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                 for (int j = 0; j < dates.Length; j++)
                 {
