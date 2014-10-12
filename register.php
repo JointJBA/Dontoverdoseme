@@ -32,7 +32,9 @@
     }
     echo "1 record added";
 
+
     mysqli_close($con);
+    header("Location: index.php");
 
 
   }

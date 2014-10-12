@@ -112,14 +112,13 @@
 
 
       </div>
-      <div class="large-6 columns"><br/>
+      <div class="large-9 columns"><br/>
         <h1><?php echo $username."'s Profile "; ?> <a class="button logout radius tiny" href="index.php">Log Out</a></h1>
         <div class="panel large-12 columns">
           <div class="tabs-content">
 
             <div class="content active" id="panel1">
               <h2> OVERVIEW </h2>
-              <p>This is the first panel of the basic tab example. This is the first panel of the basic tab example.</p>
               <?php
               foreach($drugs as $drugrow){
                   echo "<h3>".$drugrow['genName']."</h3><br>";
@@ -169,14 +168,7 @@
 
 
       </div>
-      <div class="large-3 columns">
-        <br>
-        <br>
-        <br>
-        <br>
-        <h2>Schedule</h2>
-        <div class="panel"></div>
-      </div>
+
 
 
 
