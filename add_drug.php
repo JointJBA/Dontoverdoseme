@@ -34,5 +34,14 @@ if (empty($_POST)=== false) {
   echo "<br>1 record added";
 
   mysqli_close($con);
+
+
 }
+
 ?>
+
+<form action="index.php" method="post">
+<input type="hidden" name="username" value="<?php echo $username?>">
+          <input type="hidden" name="password" value="<?php echo $password?>">
+          <input type="submit" class="button radius" value="Go back">
+</form>

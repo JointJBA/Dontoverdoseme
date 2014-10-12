@@ -124,7 +124,7 @@
             <?php 
             $count2=2;
             foreach($drugs as $drugrow){
-            echo "<div class='content' id='panel".$count2."'><p>".$drugrow['genName']."</p></div>";
+            echo "<div class='content' id='panel".$count2."'><u><h3>".$drugrow['genName']."</h3></u></div>";
 
             $json_link = '<script>$.get("https://api.fda.gov/drug/label.json?search=generic_name:'.$drugrow['genName'] . '", function(res) { $("#panel'. $count2 .'").append("<p>" + (res.results[0].warnings[0].replace(/\./g, ". <br/><br/>")) + "</p>"); }); </script>';
             echo $json_link;
