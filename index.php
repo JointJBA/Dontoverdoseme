@@ -8,6 +8,7 @@
   <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> 
 -->
 <script src="js/vendor/modernizr.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 </head>
 <body>
 
@@ -125,13 +126,8 @@
             foreach($drugs as $drugrow){
             echo "<div class='content' id='panel".$count2."'><p>".$drugrow['genName']."</p></div>";
 
-            $json_link = 'https://api.fda.gov/drug/label.json?search=generic_name:'.$drugrow['genName'];
-            echo $json_link; //link works properly something not working below
-            $json = file_get_contents($json_link);
-            $obj = json_decode($json);
-            echo $obj->results;
-
-
+            $json_link = '<script>$.get("https://api.fda.gov/drug/label.json?search=generic_name:'.$drugrow['genName'] . '", function(res) { $("#panel'. $count2 .'").append("<p>" + (res.results[0].warnings[0].replace(/\./g, ". <br/><br/>")) + "</p>"); }); </script>';
+            echo $json_link;
             $count2++;
           }
 ?>
